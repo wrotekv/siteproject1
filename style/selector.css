@@ -1,0 +1,46 @@
+.selector {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  position: absolute;      /* so it sits over the video */
+  top: 20px;
+  left: 0;
+  right: 0;
+}
+
+.selector > button {
+  width: 90px;
+  height: 90px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  background: #000;
+  box-shadow: 0 0 0 3px #b31313;      /* black ring like in the screenshot */
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.selector > button img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.selector > button:first-child,
+.selector > button:last-child {
+  transform: scale(0.75);
+  opacity: 0.4;
+}
+
+.selector > button:nth-child(3) {
+    width: 110px;
+    height: 110px;
+}
+
+.selector > button:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}

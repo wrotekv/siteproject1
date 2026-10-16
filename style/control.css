@@ -1,5 +1,17 @@
 .control {
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  width: 200px;
+  position: fixed;
+  top: 50%;
+  right: 0;                    
+  transform: translateY(-50%); 
+  margin-right: 5vh;
+}
+
+.control > div#player {
+  display: inherit;
+  flex-direction: row;
 }

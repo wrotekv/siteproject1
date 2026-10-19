@@ -1,17 +1,36 @@
 .control {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   align-items: center;
-  width: 200px;
+  gap: 15px;
+  width: 480px;
   position: fixed;
-  top: 50%;
-  right: 0;                    
-  transform: translateY(-50%); 
-  margin-right: 5vh;
+  right: 5vh;
+  bottom: 30px;
+  color: white;
 }
 
 .control > div#player {
-  display: inherit;
-  flex-direction: row;
+  display: flex;
+  justify-content: center;
+}
+
+button#play {
+  background: transparent;
+  border: 2px solid white;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+}
+
+button#play:hover {
+  background: #ffffff22;
+}
+
+.control input[type="range"] {
+  width: 100%;
+  accent-color: white;
+  cursor: pointer;
 }

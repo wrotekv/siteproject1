@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   gap: 24px;
-  position: absolute;      /* so it sits over the video */
+  position: absolute;
   top: 20px;
   left: 0;
   right: 0;
@@ -19,8 +19,9 @@
   overflow: hidden;
   cursor: pointer;
   background: #000;
-  box-shadow: 0 0 0 3px #b31313;      /* black ring like in the screenshot */
-  transition: transform 0.2s, opacity 0.2s;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
 }
 
 .selector > button img {
@@ -36,11 +37,28 @@
 }
 
 .selector > button:nth-child(3) {
-    width: 110px;
-    height: 110px;
+  width: 110px;
+  height: 110px;
 }
 
 .selector > button:hover {
   transform: scale(1.08);
   opacity: 1;
+}
+
+.selector > button#selected {
+  box-shadow: 0 0 0 3px white;
+  opacity: 1;
+}
+
+.selector > button#selected {
+  outline: 3px solid white;
+  outline-offset: 4px;
+  box-shadow: none;
+  opacity: 1;
+}
+
+.selector > button#selected > span {
+  display: flex;
+  justify-content: center;
 }

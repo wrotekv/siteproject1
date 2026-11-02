@@ -1,1 +1,28 @@
- 
+.vinyl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(50%);
+  margin-left: 400px;
+  gap: 6px;
+}
+
+.vinyl > img {
+  width: 370px;
+  height: 370px;
+  border-radius: 50%;
+  border: 6px solid #000;
+  box-shadow:
+    0 0 0 10px #e3201b,
+    0 0 0 24px #000,
+    0 0 0 26px #e3201b,
+    0 0 76px 40px rgba(255, 0, 0, 0.9);
+}
+.vinyl > h1 {
+  color: white;
+}
+
+.vinyl > span {
+  color: grey;
+}

@@ -20,14 +20,21 @@
     </video>
     <div class="control">
       <p id="lyrics">
-        <!-- TODO: add lyrics-->
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+        <span class="previous">Yeah, yeah, yeah</span>
+
+        <span class="previous">Can't fall for it</span>
+
+        <span class="current">
+          No, I can't fall for it, can't take the fall for it
+        </span>
+
+        <span class="next">
+          I know it's all yours, you never called for it
+        </span>
+
+        <span class="next">
+          Sometimes I feel like that you didn't wanna walk for it
+        </span>
       </p>
       <div id="player">
         <button id="play">
@@ -49,7 +56,7 @@
             />
           </svg>
         </button>
-        <input type="range" value="0" />
+        <input type="range" value="0" max="100" />
         <!-- TODO: add control of the song-->
       </div>
     </div>
@@ -61,8 +68,9 @@
       <button>
         <img src="./assets/cover.jpg" alt="cover" />
       </button>
-      <button>
-        <img id="selected" src="./assets/cover.jpg" alt="cover" />
+      <button id="selected">
+        <img src="./assets/cover.jpg" alt="cover" />
+        <span>Psykotic</span>
       </button>
       <button>
         <img src="./assets/cover.jpg" alt="cover" />
@@ -70,6 +78,12 @@
       <button>
         <img src="./assets/cover.jpg" alt="cover" />
       </button>
+    </div>
+
+    <div class="vinyl">
+      <img src="./assets/cover.jpg" alt="cover">
+      <h1>Song Title</h1>
+      <span>Artist name</span> 
     </div>
   </body>
 </html>

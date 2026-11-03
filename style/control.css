@@ -2,142 +2,126 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: stretch;
-
   width: min(480px, 38vw);
   position: fixed;
   top: 50%;
   right: 6.25%;
   transform: translateY(-15%);
-
   color: white;
-  font-family: Arial, sans-serif;
-  font-weight: 400;
   z-index: 10;
 }
 
-/* Lyrics container */
 #lyrics {
   margin: 0 0 24px;
-  padding: 0;
+  color: rgba(255, 255, 255, 0.5);
+}
 
+#lyrics span {
+  display: block;
+  margin-bottom: 14px;
   font-size: 18px;
-  line-height: 1.3;
-  white-space: normal;
-  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.35;
 }
 
-/* Previous lyrics */
-#lyrics .previous {
-  display: block;
-  margin-bottom: 12px;
-
-  font-size: 17px;
-  line-height: 1.3;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-/* Currently playing lyric */
 #lyrics .current {
-  display: block;
   margin-bottom: 20px;
-
   font-size: 25px;
   font-weight: 700;
-  line-height: 1.35;
-  color: #fff;
+  color: white;
 }
 
-/* Upcoming lyrics */
-#lyrics .next {
-  display: block;
-  margin-bottom: 18px;
-
-  font-size: 19px;
-  line-height: 1.35;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-/* Player controls */
 #player {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
   gap: 12px;
-  width: 100%;
 }
 
-/* Circular play button */
-button#play {
+#play {
   align-self: center;
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 60px;
   height: 60px;
   padding: 0;
-
   background: transparent;
   border: 2px solid white;
   border-radius: 50%;
-  color: white;
   cursor: pointer;
-
   transition:
-    background 0.2s ease,
-    transform 0.2s ease;
+    background 0.2s,
+    transform 0.2s;
 }
 
-button#play:hover {
+#play:hover,
+#play:focus-visible {
   background: rgba(255, 255, 255, 0.12);
   transform: scale(1.05);
 }
 
-/* Play icon */
-button#play svg.icon {
-  display: block;
-  width: 24px;
-  height: 24px;
-  color: white;
+#play:active {
+  transform: scale(0.95);
 }
 
-/* Song progress bar */
+#play img {
+  width: 24px;
+  height: 24px;
+}
+
+#play .icon-pause,
+#play.playing .icon-play {
+  display: none;
+}
+
+#play.playing .icon-pause {
+  display: block;
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -6px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.volume {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.volume img {
+  width: 18px;
+  height: 18px;
+}
+
 #player input[type="range"] {
   display: block;
   width: 100%;
   height: 4px;
   margin: 0;
-  padding: 0;
-
   appearance: none;
   -webkit-appearance: none;
-
-  border: none;
   border-radius: 10px;
   outline: none;
-
   background: linear-gradient(
     to right,
-    #fff 0%,
-    #fff var(--progress, 40%),
-    #454040 var(--progress, 40%),
-    #454040 100%
+    white var(--progress, 0%),
+    #454040 var(--progress, 0%)
   );
-
   cursor: pointer;
 }
 
-/* Chrome, Safari, Edge */
-#player input[type="range"]::-webkit-slider-thumb {
-  appearance: none;
-  -webkit-appearance: none;
+#player .volume input[type="range"] {
+  width: 100px;
+}
 
+#player input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
   width: 12px;
   height: 12px;
-  border: none;
   border-radius: 50%;
-  background: #fff;
+  background: white;
 }

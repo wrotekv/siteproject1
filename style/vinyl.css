@@ -4,7 +4,7 @@
   align-items: center;
   flex-direction: column;
   transform: translateY(50%);
-  margin-left: 400px;
+  margin-left: 20vw;
   gap: 6px;
 }
 
@@ -18,6 +18,17 @@
     0 0 0 24px #000,
     0 0 0 26px #e3201b,
     0 0 76px 40px rgba(255, 0, 0, 0.9);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
 }
 .vinyl > h1 {
   color: white;

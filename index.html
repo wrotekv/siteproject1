@@ -3,87 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Music player" />
+    <link rel="icon" href="./assets/icons/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="./assets/cover.jpg" />
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="stylesheet" href="./style/background.css" />
     <link rel="stylesheet" href="./style/vinyl.css" />
     <link rel="stylesheet" href="./style/control.css" />
     <link rel="stylesheet" href="./style/selector.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
     <title>Music player</title>
   </head>
   <body>
     <video autoplay muted loop playsinline id="background-video">
       <source src="./assets/background.mp4" type="video/mp4" />
     </video>
-    <div class="control">
+    <audio loop src="./assets/music.mp3"></audio>
+
+    <nav class="selector">
+      <button>
+        <img src="./assets/cover.jpg" alt="Album cover" />
+      </button>
+      <button>
+        <img src="./assets/cover.jpg" alt="Album cover" />
+      </button>
+      <button class="active">
+        <img src="./assets/cover.jpg" alt="Psykotic album cover" />
+        <span>Psykotic</span>
+      </button>
+      <button>
+        <img src="./assets/cover.jpg" alt="Album cover" />
+      </button>
+      <button>
+        <img src="./assets/cover.jpg" alt="Album cover" />
+      </button>
+    </nav>
+
+    <section class="vinyl">
+      <img src="./assets/cover.jpg" alt="Psykotic album cover" />
+      <h1>Song Title</h1>
+      <span>Artist name</span>
+    </section>
+
+    <section class="control">
       <p id="lyrics">
         <span class="previous">Yeah, yeah, yeah</span>
-
         <span class="previous">Can't fall for it</span>
-
         <span class="current">
           No, I can't fall for it, can't take the fall for it
         </span>
-
-        <span class="next">
-          I know it's all yours, you never called for it
-        </span>
-
+        <span class="next">I know it's all yours, you never called for it</span>
         <span class="next">
           Sometimes I feel like that you didn't wanna walk for it
         </span>
       </p>
+
       <div id="player">
         <button id="play">
-          <svg
-            class="icon"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-play preview-icon"
-          >
-            <path
-              d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"
-            />
-          </svg>
+          <img class="icon-play" src="./assets/icons/play.svg" alt="Play" />
+          <img class="icon-pause" src="./assets/icons/pause.svg" alt="Pause" />
         </button>
-        <input type="range" value="0" max="100" />
-        <!-- TODO: add control of the song-->
+        <input id="progress" type="range" value="0" min="0" max="100" step="0.1" />
+        <div class="time">
+          <span id="current-time">0:00</span>
+          <span id="duration">0:00</span>
+        </div>
+        <div class="volume">
+          <img src="./assets/icons/volume-2.svg" alt="Volume" />
+          <input id="volume" type="range" value="100" min="0" max="100" />
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="selector">
-      <button>
-        <img src="./assets/cover.jpg" alt="cover" />
-      </button>
-      <button>
-        <img src="./assets/cover.jpg" alt="cover" />
-      </button>
-      <button id="selected">
-        <img src="./assets/cover.jpg" alt="cover" />
-        <span>Psykotic</span>
-      </button>
-      <button>
-        <img src="./assets/cover.jpg" alt="cover" />
-      </button>
-      <button>
-        <img src="./assets/cover.jpg" alt="cover" />
-      </button>
-    </div>
-
-    <div class="vinyl">
-      <img src="./assets/cover.jpg" alt="cover">
-      <h1>Song Title</h1>
-      <span>Artist name</span> 
-    </div>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>
